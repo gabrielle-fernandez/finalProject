@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>secondcar</title>
+    <link rel="stylesheet" href="style.css">
+    <nav class="nav">
+        <a href="index.html">Previous car</a>
+        <a href="third-car.html">Next car</a>
+    </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg">
+        <video autoplay muted loop id="myVideo">
+            <source src="sunsetbg.mp4" type="video/mp4">
+        </video>
+        <img src="secCar.png" alt="emo Background" class="overlay-img">
+    </div>
+
+    <div class="videos"> 
+        <video id="panic" class="playVids2">
+            <source src="Panic.mp4" type="video/mp4">
+        </video>
+
+        <video id="decode" class="playVids2">
+            <source src="decode.mp4" type="video/mp4">
+        </video>
+
+        <video id="ptv" class="playVids2">
+            <source src="ptv.mp4" type="video/mp4">
+        </video>
+
+        <!-- <video id="sws" class="playVids2">
+            <source src="sws.mp4" type="video/mp4">
+        </video> -->
+
+        <video id="bmth" class="playVids2">
+            <source src="sleepwalking.mp4" type="video/mp4">
+
+    </div>
+
+    <div class="buttons"> 
+        <button class="videoBtn" data-video="panic">Panic! At The Disco - Camisado</button>
+        <button class="videoBtn" data-video="decode">Paramore - decode</button>
+        <button class="videoBtn" data-video="ptv">Pierce the Veil - Bulletproof Love</button>
+        <!-- <button class="videoBtn" data-video="sws">Sleeping With SIrens - If You Can't Hang</button> -->
+        <button class="videoBtn" data-video="bmth">Bring Me The Horizon - Sleepwalking</button>
+    </div>
+</body>
+
+<script>
+    document.querySelectorAll('.videoBtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const video = document.getElementById(button.getAttribute('data-video'));
+            if (video.paused) {
+                video.play();
+                video.muted = false;
+                video.style.opacity = '1'; 
+            } else {
+                video.pause();
+                video.muted = true;
+                video.style.opacity = '0'; 
+            }
+        });
+    });
+</script>

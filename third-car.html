@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>thirdcar</title>
+    <link rel="stylesheet" href="style.css">
+
+    <nav class="nav">
+        <a href="second-car.html">Previous car</a>
+        <a href="index.html">Next car</a>
+    </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg">
+        <video autoplay muted loop id="myVideo">
+            <source src="nightbg.mp4" type="video/mp4">
+        </video>
+        <img src="thirdCar.png" alt="party Background" class="overlay-img">
+    </div>
+
+    <div class="videos"> 
+        <video id="kiss" class="playVids3">
+            <source src="kissme.mp4" type="video/mp4">
+        </video>
+
+        <video id="lean" class="playVids3">
+            <source src="leanBack.mp4" type="video/mp4">
+        </video>
+
+        <video id="slave" class="playVids3">
+            <source src="slave4u.mp4" type="video/mp4">
+        </video>
+
+        <video id="gold" class="playVids3">
+            <source src="goldDigger.mp4" type="video/mp4">
+        </video>
+
+        <!-- <video id="grow" class="playVids3">
+            <source src="whenigrow.mp4" type="video/mp4">
+        </video> -->
+    </div>
+
+    <div class="buttons"> 
+        <button class="videoBtn" data-video="kiss">Soulja Boy - Kiss Me Through The Phone</button>
+        <button class="videoBtn" data-video="lean">Terri Joe - Lean Back</button>
+        <button class="videoBtn" data-video="slave">Brittney Spears - Slave 4 U</button>
+        <button class="videoBtn" data-video="gold">Kanye West - Gold Digger</button>
+        <!-- <button class="videoBtn" data-video="grow">The Pussycat Dolls - When I Grow Up</button> -->
+    </div>
+</body>
+
+<script>
+    document.querySelectorAll('.videoBtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const video = document.getElementById(button.getAttribute('data-video'));
+            if (video.paused) {
+                video.play();
+                video.muted = false;
+                video.style.opacity = '1'; 
+            } else {
+                video.pause();
+                video.muted = true;
+                video.style.opacity = '0'; 
+            }
+        });
+    });
+</script>

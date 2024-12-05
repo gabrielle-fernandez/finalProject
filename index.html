@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/gif" href="musicNote.gif">
+    <nav class="nav">
+        <a href="second-car.html">Next car</a>
+    </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+
+    <div class="bg">
+        <video autoplay muted loop id="myVideo">
+            <source src="lightbg.mp4" type="video/mp4">
+        </video>
+        <img src="bg.png" alt="Train Background" class="overlay-img">
+    </div>
+
+    <div class="mid-window"> </div>
+    <div class="videos"> 
+        <!-- <iframe 
+            id="fray" 
+            class="playVids" 
+            src="https://www.youtube.com/embed/cjVQ36NhbMk" 
+            title="The Fray - How to Save a Life">
+        </iframe> -->
+        <video id="fray" class="playVids1">
+            <source src="theFray.mp4" type="video/mp4">
+        </video> 
+
+        <video id="loveSong" class="playVids1">
+            <source src="loveSong.mp4" type="video/mp4">
+        </video> 
+
+        <video id="maroon" class="playVids1">
+            <source src="Maroon5.mp4" type="video/mp4">
+        </video>
+
+        <video id="jar" class="playVids1">
+            <source src="jarOfHearts.mp4" type="video/mp4">
+        </video>
+
+        <video id="speak" class="playVids1">
+            <source src="dontSpeakk.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="buttons"> 
+        <button class="videoBtn" data-video="fray">The Fray - How to Save a Life</button>
+        <button class="videoBtn" data-video="loveSong">Sara Barallies - Love Song</button>
+        <button class="videoBtn" data-video="maroon">Maroon 5 - She Will be Loved</button>
+        <button class="videoBtn" data-video="jar">Christina Perri - Jar of Hearts</button>\
+        <button class="videoBtn" data-video="speak">No Doubt - Don't Speak</button>
+    </div>
+  
+</body>
+</html>
+
+<script>
+document.querySelectorAll('.videoBtn').forEach(button => {
+    button.addEventListener('click', () => {
+        const video = document.getElementById(button.getAttribute('data-video'));
+        if (video.paused) {
+            video.play();
+            video.muted = false;  
+            video.style.opacity = '1'; 
+        } else {
+            video.pause();
+            video.muted = true;   
+            video.style.opacity = '0';  
+        }
+    });
+});
+
+</script>
